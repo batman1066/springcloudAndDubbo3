@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: gateway
+  config:
+    import:
+      - nacos:gateway.yaml
+      - nacos:common.yaml
+      - nacos:gateway-route.yaml
+  cloud:
+    loadbalancer:
+      nacos:
+        enabled: true
+    nacos:
+      server-addr: 192.168.1.122:8848 # Nacos地址
+      username: nacos
+      password: 123456
+      namespace: dev
+      config:
+        serverAddr: 192.168.1.122:8848 # Nacos地址
+        username: nacos
+        password: 123456
+        extendKey: value
+        namespace: dev
+#        name: gateway.yaml
+#        shared-configs:
+#          - data-id: common.yaml
+#          - data-id: gateway-route.yaml
+      discovery:
+        server-addr: 192.168.1.122:8848 # Nacos地址
+        namespace: dev
