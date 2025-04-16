@@ -4,12 +4,17 @@ management:
       exposure:
         include: "*"
 spring:
+  #允许循环依赖
+  main:
+    allow-circular-references: true
   application:
     name: web
   config:
     import:
+      - nacos:dubbo.yaml
       - nacos:web.yaml
       - nacos:common.yaml
+      - nacos:sentinel-dubbo.yaml
   cloud:
     nacos:
       server-addr: 192.168.1.122:8848 # Nacos地址
@@ -24,7 +29,7 @@ spring:
         name: web.yaml
         file-extension: yaml
       #        shared-configs:
-#          - data-id: common.yaml
+      #          - data-id: common.yaml
       discovery:
         server-addr: 192.168.1.122:8848 # Nacos地址
         namespace: dev

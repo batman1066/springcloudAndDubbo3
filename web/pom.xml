@@ -32,7 +32,19 @@
             <groupId>org.example</groupId>
             <artifactId>account-api</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>bussiness-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>appbase-mvc</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>sentinel-my-starter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
