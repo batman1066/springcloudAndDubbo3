@@ -36,18 +36,40 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
             <version>${gateway.version}</version>
         </dependency>
+
+        <!-- sentinel -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>sentinel-my-starter</artifactId>
+        </dependency>
+        <!-- sentinel-gateway -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+            <version>2021.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>sentinel-api-gateway-adapter-common</artifactId>
+            <groupId>com.alibaba.csp</groupId>
+            <version>${sentinel.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
+            <groupId>com.alibaba.csp</groupId>
+            <version>${sentinel.version}</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-gateway-dependencies</artifactId>
-            <version>${gateway.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-gateway-dependencies</artifactId>
+                <version>${gateway.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
@@ -58,5 +80,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
