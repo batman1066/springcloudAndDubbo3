@@ -25,10 +25,6 @@
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-nacos-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.example</groupId>
             <artifactId>account-api</artifactId>
         </dependency>
@@ -39,6 +35,20 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>appbase-mvc</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>nacos-config-spring-boot-starter</artifactId>
+                    <groupId>com.alibaba.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-starter</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>dubbo</artifactId>
+                    <groupId>org.apache.dubbo</groupId>
+                </exclusion>
+            </exclusions>
             <optional>true</optional>
         </dependency>
         <dependency>
