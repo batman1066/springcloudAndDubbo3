@@ -13,7 +13,7 @@ public class MyBlockExceptionHandler implements BlockExceptionHandler {
     }
 
     public void handle(HttpServletRequest request, HttpServletResponse response, BlockException e) throws Exception {
-        throw new BusinessException(RespInfo.HTTP_ERROR.getCode(), "被限流");
+        throw new BusinessException(RespInfo.HTTP_ERROR.getCode(), e.getRule().getClass().getName() + ":被限流");
         /*response.setStatus(HttpStatus.SC_OK);
         PrintWriter out = response.getWriter();
         response.setCharacterEncoding("UTF-8");

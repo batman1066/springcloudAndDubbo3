@@ -31,7 +31,13 @@ public class TestController {
     public String test(@RequestParam("hehe") String hehe) throws InterruptedException {
         log.info("rest api hehe:{}", hehe);
         //Thread.sleep(500);
-        return accountApi.test(hehe);
+        String result = "";
+        try {
+            result = accountApi.test(hehe);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
         //return "这是web,hehe:" + hehe;
     }
 

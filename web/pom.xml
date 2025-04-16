@@ -53,6 +53,28 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
+            <artifactId>appbase-dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>nacos-config-spring-boot-starter</artifactId>
+                    <groupId>com.alibaba.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-starter</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>dubbo-spring-boot-starter</artifactId>
+                    <groupId>org.apache.dubbo</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>dubbo-nacos-spring-boot-starter</artifactId>
+                    <groupId>org.apache.dubbo</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
             <artifactId>sentinel-my-starter</artifactId>
         </dependency>
     </dependencies>

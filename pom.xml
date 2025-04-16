@@ -82,6 +82,11 @@
                 <version>${api.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>appbase-dubbo</artifactId>
+                <version>${api.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-bom</artifactId>
                 <version>3.3.0</version>
