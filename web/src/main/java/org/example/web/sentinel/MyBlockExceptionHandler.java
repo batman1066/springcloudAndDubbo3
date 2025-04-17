@@ -13,7 +13,9 @@ public class MyBlockExceptionHandler implements BlockExceptionHandler {
     }
 
     public void handle(HttpServletRequest request, HttpServletResponse response, BlockException e) throws Exception {
-        throw new BusinessException(RespInfo.HTTP_ERROR.getCode(), e.getRule().getClass().getName() + ":被限流");
+        String message = "rest server Blocked by Sentinel: " + e.getClass().getSimpleName();
+        BusinessException businessException = new BusinessException(RespInfo.HTTP_ERROR.getCode(), message, true);
+        throw businessException;
         /*response.setStatus(HttpStatus.SC_OK);
         PrintWriter out = response.getWriter();
         response.setCharacterEncoding("UTF-8");
