@@ -5,7 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication(scanBasePackages = {"org.example.web", "org.example.mvc", "org.example.dubbo"})
+@SpringBootApplication(scanBasePackages =
+        {"org.example.web",
+                "org.example.common",
+                "org.example.dubbo",
+                "org.example.mvc"})
 @EnableDubbo
 @EnableDiscoveryClient
 public class WebApplication {
